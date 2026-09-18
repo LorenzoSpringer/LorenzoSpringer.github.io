@@ -1,65 +1,23 @@
-:root {
-  --primary: #2563eb;
-  --primary-dark: #1e40af;
-  --text: #1f2937;
-  --text-light: #6b7280;
-  --bg: #ffffff;
-  --bg-alt: #f9fafb;
-}
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Mijn eerste website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/stijl.css">
+</head>
+<body>
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pagina2.html">Pagina 2</a></li>
+    <li><a href="pagina3.html">Pagina 3</a></li>
+  </ul>
 
-body {
-  font-family: 'Lexend', Arial, sans-serif;
-  color: var(--text);
-  background-color: var(--bg);
-  line-height: 1.6;
-}
+  <h1>Welkom op mijn website!</h1>
+  <p>Dit is mijn eerste pagina.</p>
+  <img src="afbeeldingen/Mopshond.avif" alt="Mijn hond">
 
-/* Navigatiebalk */
-nav {
-  background-color: var(--bg);
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 0;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-nav li a {
-  display: block;
-  color: var(--text);
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-nav li a:hover {
-  background-color: var(--primary);
-  color: white;
-}
-
-/* Hero sectie */
-.hero {
-  text-align: center;
-  padding: 80px 24px;
-  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
-}
-
-.hero h1 {
-  font-size:
+</body>
+</html>
