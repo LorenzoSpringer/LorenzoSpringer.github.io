@@ -1,28 +1,114 @@
-body {
-  font-family: 'Lexend', Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --bg: #ffffff;
+  --bg-alt: #f9fafb;
 }
 
-ul {
-  list-style-type: none;   /* geen bolletjes */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #333;
 }
 
-li {
-  display: inline-block;    /* naast elkaar i.p.v. onder elkaar */
+body {
+  font-family: 'Lexend', Arial, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
 }
 
-li a {
+/* Navigatiebalk */
+nav {
+  background-color: var(--bg);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav li a {
   display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+  color: var(--text);
   text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-li a:hover {
-  background-color: #555;
+nav li a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Hero sectie */
+.hero {
+  text-align: center;
+  padding: 80px 24px;
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Content sectie */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.content img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin-top: 24px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 32px 24px;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  border-top: 1px solid #e5e7eb;
 }
