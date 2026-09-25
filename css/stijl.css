@@ -1,4 +1,4 @@
-:root {
+:root { /* Kleuren die overal op de site hergebruikt worden */
   --primary: #2563eb;
   --primary-dark: #1e40af;
   --text: #1f2937;
@@ -8,107 +8,103 @@
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* Zorgt dat padding/border binnen de breedte blijven */
+  margin: 0; /* Verwijdert standaard marge van de browser */
+  padding: 0; /* Verwijdert standaard padding van de browser */
 }
 
 body {
-  font-family: 'Lexend', Arial, sans-serif;
-  color: var(--text);
-  background-color: var(--bg);
-  line-height: 1.6;
+  font-family: 'Lexend', Arial, sans-serif; /* Lettertype van de hele pagina */
+  color: var(--text); /* Kleur van de tekst */
+  background-color: var(--bg); /* Achtergrondkleur van de pagina */
+  line-height: 1.6; /* Ruimte tussen regels tekst */
 }
 
-/* Navigatiebalk */
 nav {
-  background-color: var(--bg);
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  background-color: var(--bg); /* Achtergrondkleur van de menubalk */
+  border-bottom: 1px solid #e5e7eb; /* Dun lijntje onder de menubalk */
+  position: sticky; /* Menu blijft zichtbaar bij scrollen */
+  top: 0; /* Blijft aan de bovenkant plakken */
+  z-index: 10; /* Zorgt dat het menu boven andere inhoud blijft */
 }
 
 nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 0;
-  max-width: 1000px;
-  margin: 0 auto;
+  list-style-type: none; /* Geen bolletjes voor de lijst */
+  display: flex; /* Zet de menu-items naast elkaar */
+  justify-content: center; /* Centreert het menu */
+  gap: 8px; /* Ruimte tussen de menu-items */
+  padding: 16px 0; /* Ruimte boven/onder het menu */
+  max-width: 1000px; /* Maximale breedte van het menu */
+  margin: 0 auto; /* Centreert het menu horizontaal */
 }
 
 nav li a {
-  display: block;
-  color: var(--text);
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  display: block; /* Maakt de hele link klikbaar */
+  color: var(--text); /* Tekstkleur van de link */
+  text-decoration: none; /* Geen onderstreping */
+  padding: 8px 20px; /* Ruimte rondom de tekst */
+  border-radius: 6px; /* Ronde hoeken */
+  font-weight: 500; /* Iets dikkere tekst */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Zachte overgang bij hover */
 }
 
 nav li a:hover {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--primary); /* Achtergrondkleur bij muis erover */
+  color: white; /* Tekstkleur bij muis erover */
 }
 
-/* Hero sectie */
 .hero {
-  text-align: center;
-  padding: 80px 24px;
-  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+  text-align: center; /* Centreert de tekst */
+  padding: 80px 24px; /* Ruimte rondom de hero-sectie */
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%); /* Zachte kleurovergang op de achtergrond */
 }
 
 .hero h1 {
-  font-size: 2.75rem;
-  margin-bottom: 16px;
-  color: var(--text);
+  font-size: 2.75rem; /* Grootte van de hoofdtitel */
+  margin-bottom: 16px; /* Ruimte onder de titel */
+  color: var(--text); /* Kleur van de titel */
 }
 
 .hero p {
-  font-size: 1.15rem;
-  color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto 32px auto;
+  font-size: 1.15rem; /* Grootte van de introductietekst */
+  color: var(--text-light); /* Lichtere tekstkleur */
+  max-width: 600px; /* Maximale breedte, voor leesbaarheid */
+  margin: 0 auto 32px auto; /* Centreert de tekst en geeft ruimte eronder */
 }
 
 .btn {
-  display: inline-block;
-  background-color: var(--primary);
-  color: white;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
+  display: inline-block; /* Maakt er een blok-knop van */
+  background-color: var(--primary); /* Achtergrondkleur van de knop */
+  color: white; /* Tekstkleur van de knop */
+  text-decoration: none; /* Geen onderstreping */
+  padding: 12px 28px; /* Ruimte rondom de knoptekst */
+  border-radius: 8px; /* Ronde hoeken */
+  font-weight: 600; /* Dikkere tekst */
+  transition: background-color 0.2s ease; /* Zachte overgang bij hover */
 }
 
 .btn:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-dark); /* Donkerdere kleur bij muis erover */
 }
 
-/* Content sectie */
 .content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 24px;
-  text-align: center;
+  max-width: 800px; /* Maximale breedte van de inhoud */
+  margin: 0 auto; /* Centreert de inhoud horizontaal */
+  padding: 60px 24px; /* Ruimte rondom de inhoud */
+  text-align: center; /* Centreert de tekst */
 }
 
 .content img {
-  max-width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  margin-top: 24px;
+  max-width: 100%; /* Afbeelding past altijd binnen de breedte */
+  border-radius: 16px; /* Ronde hoeken op de afbeelding */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Zachte schaduw onder de afbeelding */
+  margin-top: 24px; /* Ruimte boven de afbeelding */
 }
 
-/* Footer */
 footer {
-  text-align: center;
-  padding: 32px 24px;
-  color: var(--text-light);
-  font-size: 0.9rem;
-  border-top: 1px solid #e5e7eb;
+  text-align: center; /* Centreert de tekst */
+  padding: 32px 24px; /* Ruimte rondom de footer */
+  color: var(--text-light); /* Lichtere tekstkleur */
+  font-size: 0.9rem; /* Kleinere tekstgrootte */
+  border-top: 1px solid #e5e7eb; /* Dun lijntje boven de footer */
 }
