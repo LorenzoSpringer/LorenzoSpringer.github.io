@@ -53,58 +53,55 @@ nav li a:hover {
   color: white; /* Tekstkleur bij muis erover */
 }
 
-.hero {
-  text-align: center; /* Centreert de tekst */
-  padding: 80px 24px; /* Ruimte rondom de hero-sectie */
-  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%); /* Zachte kleurovergang op de achtergrond */
+/* Zorgt dat het dropdown-item goed gepositioneerd wordt */
+.dropdown {
+  position: relative; /* Basis voor de positie van het uitklapmenu */
 }
 
-.hero h1 {
-  font-size: 2.75rem; /* Grootte van de hoofdtitel */
-  margin-bottom: 16px; /* Ruimte onder de titel */
-  color: var(--text); /* Kleur van de titel */
+/* Opmaak van de "Pagina 2"-knop, zelfde stijl als de andere menu-links */
+.dropdown-btn {
+  background: none; /* Geen achtergrondkleur standaard */
+  border: none; /* Geen randje om de knop */
+  font-family: 'Lexend', Arial, sans-serif; /* Zelfde lettertype als de rest */
+  font-size: 1rem; /* Zelfde tekstgrootte als de andere menu-links */
+  color: var(--text); /* Tekstkleur */
+  padding: 8px 20px; /* Ruimte rondom de tekst */
+  border-radius: 6px; /* Ronde hoeken */
+  font-weight: 500; /* Iets dikkere tekst */
+  cursor: pointer; /* Muis wordt een handje bij hover */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Zachte overgang bij hover */
 }
 
-.hero p {
-  font-size: 1.15rem; /* Grootte van de introductietekst */
-  color: var(--text-light); /* Lichtere tekstkleur */
-  max-width: 600px; /* Maximale breedte, voor leesbaarheid */
-  margin: 0 auto 32px auto; /* Centreert de tekst en geeft ruimte eronder */
+.dropdown-btn:hover {
+  background-color: var(--primary); /* Achtergrondkleur bij muis erover */
+  color: white; /* Tekstkleur bij muis erover */
 }
 
-.btn {
-  display: inline-block; /* Maakt er een blok-knop van */
-  background-color: var(--primary); /* Achtergrondkleur van de knop */
-  color: white; /* Tekstkleur van de knop */
-  text-decoration: none; /* Geen onderstreping */
-  padding: 12px 28px; /* Ruimte rondom de knoptekst */
+/* Het uitklapmenu zelf, standaard verborgen */
+.dropdown-content {
+  display: none; /* Onzichtbaar totdat er geklikt wordt */
+  position: absolute; /* Zweeft boven de rest van de pagina */
+  top: 100%; /* Verschijnt direct onder de knop */
+  left: 0;
+  background-color: var(--bg); /* Achtergrondkleur van het menu */
+  border: 1px solid #e5e7eb; /* Dun randje */
   border-radius: 8px; /* Ronde hoeken */
-  font-weight: 600; /* Dikkere tekst */
-  transition: background-color 0.2s ease; /* Zachte overgang bij hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Zachte schaduw */
+  overflow: hidden; /* Zorgt dat de ronde hoeken netjes zijn */
+  min-width: 160px; /* Minimale breedte van het menu */
 }
 
-.btn:hover {
-  background-color: var(--primary-dark); /* Donkerdere kleur bij muis erover */
+/* Zorgt dat het menu zichtbaar wordt als de class 'show' actief is */
+.dropdown-content.show {
+  display: block; /* Wordt zichtbaar bij klikken */
 }
 
-.content {
-  max-width: 800px; /* Maximale breedte van de inhoud */
-  margin: 0 auto; /* Centreert de inhoud horizontaal */
-  padding: 60px 24px; /* Ruimte rondom de inhoud */
-  text-align: center; /* Centreert de tekst */
+/* Opmaak van elke link binnen het uitklapmenu */
+.dropdown-content a {
+  display: block; /* Elke link op eigen regel */
+  padding: 12px 20px; /* Ruimte rondom de tekst */
+  color: var(--text); /* Tekstkleur */
+  text-decoration: none; /* Geen onderstreping */
 }
 
-.content img {
-  max-width: 100%; /* Afbeelding past altijd binnen de breedte */
-  border-radius: 16px; /* Ronde hoeken op de afbeelding */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Zachte schaduw onder de afbeelding */
-  margin-top: 24px; /* Ruimte boven de afbeelding */
-}
-
-footer {
-  text-align: center; /* Centreert de tekst */
-  padding: 32px 24px; /* Ruimte rondom de footer */
-  color: var(--text-light); /* Lichtere tekstkleur */
-  font-size: 0.9rem; /* Kleinere tekstgrootte */
-  border-top: 1px solid #e5e7eb; /* Dun lijntje boven de footer */
-}
+.d
