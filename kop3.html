@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Kop 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Verbindt vast met Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> <!-- Laadt het lettertype Lexend -->
+  <link rel="stylesheet" type="text/css" href="css/stijl.css"> <!-- Koppelt het stijlbestand met alle opmaak -->
+</head>
+<body>
+
+  <nav> <!-- Navigatiemenu bovenaan, staat op elke pagina hetzelfde -->
+    <ul>
+      <li><a href="index.html">Home</a></li> <!-- Link naar homepage -->
+      <li class="dropdown"> <!-- Dropdown-menu item -->
+        <button class="dropdown-btn" onclick="toggleDropdown()">Pagina 2 ▾</button> <!-- Knop die het menu opent/sluit -->
+        <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="kop1.html">Kop 1</a> <!-- Link naar Kop 1 -->
+          <a href="kop2.html">Kop 2</a> <!-- Link naar Kop 2 -->
+          <a href="kop3.html">Kop 3</a> <!-- Link naar Kop 3 -->
+        </div>
+      </li>
+      <li><a href="pagina3.html">Pagina 3</a></li> <!-- Link naar derde pagina -->
+    </ul>
+  </nav>
+
+  <section class="content"> <!-- Inhoud van deze pagina -->
+    <h1>Kop 3</h1>
+    <p>Hier komt de inhoud van Kop 3. Je kunt hier tekst, afbeeldingen of andere elementen toevoegen die specifiek bij dit onderwerp horen.</p>
+  </section>
+
+  <footer> <!-- Footer onderaan de pagina -->
+    <p>&copy; 2026 Mijn Website</p>
+  </footer>
+
+  <script> <!-- Regelt het openen/sluiten van het dropdownmenu -->
+    function toggleDropdown() {
+      document.getElementById("dropdownMenu").classList.toggle("show"); // Wisselt het menu aan/uit
+    }
+    window.addEventListener("click", function(event) {
+      if (!event.target.matches('.dropdown-btn')) { // Als er buiten de knop geklikt wordt
+        const dropdown = document.getElementById("dropdownMenu");
+        if (dropdown.classList.contains('show')) {
+          dropdown.classList.remove('show'); // Sluit het menu
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
