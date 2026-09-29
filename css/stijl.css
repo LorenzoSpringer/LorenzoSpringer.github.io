@@ -32,6 +32,7 @@ nav ul {
   list-style-type: none; /* Geen bolletjes voor de lijst */
   display: flex; /* Zet de menu-items naast elkaar */
   justify-content: center; /* Centreert het menu */
+  align-items: center; /* Zorgt dat knop en links verticaal gelijk uitlijnen */
   gap: 8px; /* Ruimte tussen de menu-items */
   padding: 16px 0; /* Ruimte boven/onder het menu */
   max-width: 1000px; /* Maximale breedte van het menu */
@@ -62,8 +63,10 @@ nav li a:hover {
 .dropdown-btn {
   background: none; /* Geen achtergrondkleur standaard */
   border: none; /* Geen randje om de knop */
+  margin: 0; /* Verwijdert de standaard marge die browsers aan knoppen geven */
   font-family: 'Lexend', Arial, sans-serif; /* Zelfde lettertype als de rest */
   font-size: 1rem; /* Zelfde tekstgrootte als de andere menu-links */
+  line-height: 1.6; /* Zelfde regelhoogte als de rest, voor gelijke uitlijning */
   color: var(--text); /* Tekstkleur */
   padding: 8px 20px; /* Ruimte rondom de tekst */
   border-radius: 6px; /* Ronde hoeken */
@@ -104,4 +107,62 @@ nav li a:hover {
   text-decoration: none; /* Geen onderstreping */
 }
 
-.d
+.dropdown-content a:hover {
+  background-color: var(--bg-alt); /* Lichte achtergrond bij hover */
+}
+
+.hero {
+  text-align: center; /* Centreert de tekst */
+  padding: 80px 24px; /* Ruimte rondom de hero-sectie */
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%); /* Zachte kleurovergang op de achtergrond */
+}
+
+.hero h1 {
+  font-size: 2.75rem; /* Grootte van de hoofdtitel */
+  margin-bottom: 16px; /* Ruimte onder de titel */
+  color: var(--text); /* Kleur van de titel */
+}
+
+.hero p {
+  font-size: 1.15rem; /* Grootte van de introductietekst */
+  color: var(--text-light); /* Lichtere tekstkleur */
+  max-width: 600px; /* Maximale breedte, voor leesbaarheid */
+  margin: 0 auto 32px auto; /* Centreert de tekst en geeft ruimte eronder */
+}
+
+.btn {
+  display: inline-block; /* Maakt er een blok-knop van */
+  background-color: var(--primary); /* Achtergrondkleur van de knop */
+  color: white; /* Tekstkleur van de knop */
+  text-decoration: none; /* Geen onderstreping */
+  padding: 12px 28px; /* Ruimte rondom de knoptekst */
+  border-radius: 8px; /* Ronde hoeken */
+  font-weight: 600; /* Dikkere tekst */
+  transition: background-color 0.2s ease; /* Zachte overgang bij hover */
+}
+
+.btn:hover {
+  background-color: var(--primary-dark); /* Donkerdere kleur bij muis erover */
+}
+
+.content {
+  max-width: 800px; /* Maximale breedte van de inhoud */
+  margin: 0 auto; /* Centreert de inhoud horizontaal */
+  padding: 60px 24px; /* Ruimte rondom de inhoud */
+  text-align: center; /* Centreert de tekst */
+}
+
+.content img {
+  max-width: 100%; /* Afbeelding past altijd binnen de breedte */
+  border-radius: 16px; /* Ronde hoeken op de afbeelding */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Zachte schaduw onder de afbeelding */
+  margin-top: 24px; /* Ruimte boven de afbeelding */
+}
+
+footer {
+  text-align: center; /* Centreert de tekst */
+  padding: 32px 24px; /* Ruimte rondom de footer */
+  color: var(--text-light); /* Lichtere tekstkleur */
+  font-size: 0.9rem; /* Kleinere tekstgrootte */
+  border-top: 1px solid #e5e7eb; /* Dun lijntje boven de footer */
+}
