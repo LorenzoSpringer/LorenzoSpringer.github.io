@@ -13,12 +13,18 @@
   padding: 0; /* Verwijdert standaard padding van de browser */
 }
 
+html {
+  scroll-behavior: smooth; /* Zachte scroll als je op een link met # klikt, zoals "Lees verder" */
+}
+
 body {
   font-family: 'Lexend', Arial, sans-serif; /* Lettertype van de hele pagina */
   color: var(--text); /* Kleur van de tekst */
   background-color: var(--bg); /* Achtergrondkleur van de pagina */
   line-height: 1.6; /* Ruimte tussen regels tekst */
 }
+
+/* ---------- Navigatiemenu ---------- */
 
 nav {
   background-color: var(--bg); /* Achtergrondkleur van de menubalk */
@@ -31,6 +37,7 @@ nav {
 nav ul {
   list-style-type: none; /* Geen bolletjes voor de lijst */
   display: flex; /* Zet de menu-items naast elkaar */
+  flex-wrap: wrap; /* Op een smal scherm mogen items op een nieuwe regel */
   justify-content: center; /* Centreert het menu */
   align-items: center; /* Zorgt dat knop en links verticaal gelijk uitlijnen */
   gap: 8px; /* Ruimte tussen de menu-items */
@@ -54,12 +61,12 @@ nav li a:hover {
   color: white; /* Tekstkleur bij muis erover */
 }
 
-/* Zorgt dat het dropdown-item goed gepositioneerd wordt */
+/* ---------- Dropdownmenu ---------- */
+
 .dropdown {
   position: relative; /* Basis voor de positie van het uitklapmenu */
 }
 
-/* Opmaak van de "Pagina 2"-knop, zelfde stijl als de andere menu-links */
 .dropdown-btn {
   background: none; /* Geen achtergrondkleur standaard */
   border: none; /* Geen randje om de knop */
@@ -80,12 +87,11 @@ nav li a:hover {
   color: white; /* Tekstkleur bij muis erover */
 }
 
-/* Het uitklapmenu zelf, standaard verborgen */
 .dropdown-content {
   display: none; /* Onzichtbaar totdat er geklikt wordt */
   position: absolute; /* Zweeft boven de rest van de pagina */
   top: 100%; /* Verschijnt direct onder de knop */
-  left: 0;
+  left: 0; /* Begint links onder de knop */
   background-color: var(--bg); /* Achtergrondkleur van het menu */
   border: 1px solid #e5e7eb; /* Dun randje */
   border-radius: 8px; /* Ronde hoeken */
@@ -94,12 +100,10 @@ nav li a:hover {
   min-width: 160px; /* Minimale breedte van het menu */
 }
 
-/* Zorgt dat het menu zichtbaar wordt als de class 'show' actief is */
 .dropdown-content.show {
   display: block; /* Wordt zichtbaar bij klikken */
 }
 
-/* Opmaak van elke link binnen het uitklapmenu */
 .dropdown-content a {
   display: block; /* Elke link op eigen regel */
   padding: 12px 20px; /* Ruimte rondom de tekst */
@@ -110,6 +114,8 @@ nav li a:hover {
 .dropdown-content a:hover {
   background-color: var(--bg-alt); /* Lichte achtergrond bij hover */
 }
+
+/* ---------- Hero en knop ---------- */
 
 .hero {
   text-align: center; /* Centreert de tekst */
@@ -145,11 +151,26 @@ nav li a:hover {
   background-color: var(--primary-dark); /* Donkerdere kleur bij muis erover */
 }
 
+/* ---------- Inhoud ---------- */
+
 .content {
   max-width: 800px; /* Maximale breedte van de inhoud */
   margin: 0 auto; /* Centreert de inhoud horizontaal */
   padding: 60px 24px; /* Ruimte rondom de inhoud */
   text-align: center; /* Centreert de tekst */
+}
+
+.content h1,
+.content h2 {
+  margin-bottom: 12px; /* Ruimte onder de titels in de inhoud */
+}
+
+.content h2 {
+  margin-top: 40px; /* Ruimte boven elk kopje zodat onderdelen los van elkaar staan */
+}
+
+.content p {
+  margin-bottom: 16px; /* Ruimte tussen alinea's */
 }
 
 .content img {
@@ -159,10 +180,111 @@ nav li a:hover {
   margin-top: 24px; /* Ruimte boven de afbeelding */
 }
 
+/* ---------- Kaartjes (binaire code-pagina) ---------- */
+
+.kaarten {
+  display: grid; /* Zet de kaartjes in een raster */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Kaartjes naast elkaar, op een telefoon onder elkaar */
+  gap: 24px; /* Ruimte tussen de kaartjes */
+  max-width: 1000px; /* Maximale breedte van het raster */
+  margin: 0 auto; /* Centreert het raster */
+  padding: 0 24px 40px 24px; /* Ruimte rondom het raster */
+}
+
+.kaart {
+  background-color: var(--bg); /* Witte achtergrond */
+  border: 1px solid #e5e7eb; /* Dun randje */
+  border-radius: 12px; /* Ronde hoeken */
+  padding: 28px; /* Ruimte binnen het kaartje */
+  text-align: left; /* Tekst links uitgelijnd in het kaartje */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Zachte schaduw */
+  transition: transform 0.2s ease; /* Zachte beweging bij hover */
+}
+
+.kaart:hover {
+  transform: translateY(-4px); /* Kaartje gaat iets omhoog als je erover zweeft */
+}
+
+.kaart h3 {
+  color: var(--primary); /* Blauwe titel */
+  margin-bottom: 8px; /* Ruimte onder de titel */
+}
+
+.kaart p {
+  color: var(--text-light); /* Lichtere tekstkleur */
+}
+
+/* ---------- Tabellen ---------- */
+
+.tabel-wrap {
+  overflow-x: auto; /* Tabel kan zijwaarts scrollen op een kleine telefoon */
+}
+
+.tabel {
+  border-collapse: collapse; /* Randen van de cellen vallen samen */
+  margin: 16px auto 24px auto; /* Centreert de tabel */
+  width: 100%; /* Tabel vult de beschikbare breedte */
+  max-width: 700px; /* Maar nooit breder dan dit */
+}
+
+.tabel th,
+.tabel td {
+  border: 1px solid #e5e7eb; /* Randje om elke cel */
+  padding: 10px 12px; /* Ruimte in elke cel */
+  text-align: center; /* Tekst in het midden van de cel */
+}
+
+.tabel th {
+  background-color: var(--bg-alt); /* Lichtgrijze achtergrond voor de kopjes */
+}
+
+.tabel .aan {
+  background-color: var(--primary); /* Blauwe achtergrond voor de enen */
+  color: white; /* Witte tekst op de blauwe achtergrond */
+  font-weight: 600; /* Dikkere tekst */
+}
+
+/* ---------- Game ---------- */
+
+.game-wrap {
+  overflow-x: auto; /* Op een kleine telefoon kun je de game zijwaarts scrollen */
+  margin: 16px auto 24px auto; /* Centreert de game en geeft ruimte erboven en eronder */
+  max-width: 700px; /* Maximale breedte, zelfde als de game zelf */
+}
+
+.game-wrap iframe {
+  display: block; /* Haalt het kleine randje onder het iframe weg */
+  margin: 0 auto; /* Centreert de game */
+  border-radius: 12px; /* Ronde hoeken, past bij de kaartjes */
+}
+
+/* ---------- Footer ---------- */
+
 footer {
   text-align: center; /* Centreert de tekst */
   padding: 32px 24px; /* Ruimte rondom de footer */
   color: var(--text-light); /* Lichtere tekstkleur */
   font-size: 0.9rem; /* Kleinere tekstgrootte */
   border-top: 1px solid #e5e7eb; /* Dun lijntje boven de footer */
+}
+
+/* ---------- Kleine schermen (telefoon) ---------- */
+
+@media (max-width: 600px) { /* Alles hieronder geldt alleen als het scherm smaller is dan 600 pixels */
+  .hero {
+    padding: 48px 20px; /* Minder ruimte rond de hero op een telefoon */
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* Kleinere hoofdtitel zodat hij past */
+  }
+
+  .content {
+    padding: 40px 20px; /* Minder ruimte rond de inhoud op een telefoon */
+  }
+
+  nav li a,
+  .dropdown-btn {
+    padding: 8px 14px; /* Smallere menu-knoppen zodat alles past */
+  }
 }
