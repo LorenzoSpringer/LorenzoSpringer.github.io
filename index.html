@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Mijn eerste website</title>
+  <title>Binaire code</title> <!-- Titel die op het tabblad komt te staan -->
   <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Verbindt vast met Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> <!-- Laadt het lettertype Lexend -->
   <link rel="stylesheet" type="text/css" href="css/stijl.css"> <!-- Koppelt het stijlbestand met alle opmaak -->
@@ -13,9 +13,9 @@
     <ul>
       <li><a href="index.html">Home</a></li> <!-- Link naar homepage -->
       <li class="dropdown"> <!-- Dropdown-menu item -->
-        <button class="dropdown-btn" onclick="toggleDropdown()">Informatica ▾</button> <!-- Knop die het menu opent/sluit -->
+        <button class="dropdown-btn" onclick="toggleDropdown()">Pagina 2 ▾</button> <!-- Knop die het menu opent/sluit -->
         <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
-          <a href="kop1.html">Binaire code</a> <!-- Link naar Kop 1 -->
+          <a href="kop1.html">Kop 1</a> <!-- Link naar Kop 1 (binaire code) -->
           <a href="kop2.html">Kop 2</a> <!-- Link naar Kop 2 -->
           <a href="kop3.html">Kop 3</a> <!-- Link naar Kop 3 -->
         </div>
@@ -24,14 +24,57 @@
     </ul>
   </nav>
 
-  <section class="hero"> <!-- Grote introductiesectie bovenaan de homepage -->
-    <h1>Welkom op mijn website</h1>
-    <p>Dit is mijn website waarin ik jullie alles ga leren over de informatica onderdelen!</p>
-    <a href="pagina2.html" class="btn">Bekijk meer</a> <!-- Knop die naar pagina 2 verwijst -->
+  <section class="hero"> <!-- Grote kopsectie bovenaan de pagina -->
+    <h1>Binaire code</h1> <!-- Hoofdtitel van de pagina -->
+    <p>Computers kennen maar twee toestanden: aan en uit. Met alleen nullen en enen kunnen ze getallen, letters en zelfs foto's opslaan.</p> <!-- Korte introductie -->
+    <a href="#uitleg" class="btn">Lees verder</a> <!-- Link die naar het kopje met id "uitleg" scrolt -->
   </section>
 
-  <section class="content"> <!-- Inhoud-sectie met een afbeelding -->
-    <img src="afbeeldingen/Mopshond.avif" alt="Mijn hond">
+  <section class="kaarten" id="uitleg"> <!-- Rij met drie kaartjes, id zodat de knop hierheen kan scrollen -->
+    <div class="kaart"> <!-- Kaartje 1 -->
+      <h3>Bit</h3> <!-- Titel van het kaartje -->
+      <p>Eén 0 of één 1. Dit is de kleinste hoeveelheid informatie in een computer.</p> <!-- Uitleg over een bit -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 2 -->
+      <h3>Byte</h3> <!-- Titel van het kaartje -->
+      <p>Acht bits samen. Daarmee kun je 256 verschillende waardes opslaan, zoals een letter.</p> <!-- Uitleg over een byte -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 3 -->
+      <h3>Waarom binair?</h3> <!-- Titel van het kaartje -->
+      <p>Elektronica kan heel betrouwbaar onderscheid maken tussen spanning en geen spanning.</p> <!-- Uitleg waarom binair gebruikt wordt -->
+    </div>
+  </section>
+
+  <section class="content"> <!-- Sectie met de uitleg over omrekenen -->
+    <h2>Van binair naar decimaal</h2> <!-- Kopje van het onderdeel -->
+    <p>Elke plek in een binair getal heeft een waarde die steeds verdubbelt. Waar een 1 staat, tel je die waarde mee. Zo is 00001011 gelijk aan 8 + 2 + 1 = 11.</p> <!-- Uitleg van het omrekenen -->
+
+    <div class="tabel-wrap"> <!-- Zorgt dat de tabel op een kleine telefoon kan scrollen -->
+      <table class="tabel"> <!-- Tabel met de plaatswaardes -->
+        <tr> <!-- Eerste rij: de waarde van elke plek -->
+          <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr> <!-- Tweede rij: de bits van het getal 11 -->
+          <td>0</td><td>0</td><td>0</td><td>0</td>
+          <td class="aan">1</td> <!-- Class "aan" kleurt de enen blauw -->
+          <td>0</td>
+          <td class="aan">1</td>
+          <td class="aan">1</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Voorbeelden</h2> <!-- Kopje van het volgende onderdeel -->
+    <div class="tabel-wrap"> <!-- Zorgt dat de tabel op een kleine telefoon kan scrollen -->
+      <table class="tabel"> <!-- Tabel met voorbeelden van getallen -->
+        <tr><th>Decimaal</th><th>Binair</th></tr> <!-- Kopjes van de kolommen -->
+        <tr><td>1</td><td>00000001</td></tr> <!-- Voorbeeld 1 -->
+        <tr><td>2</td><td>00000010</td></tr> <!-- Voorbeeld 2 -->
+        <tr><td>5</td><td>00000101</td></tr> <!-- Voorbeeld 5 -->
+        <tr><td>11</td><td>00001011</td></tr> <!-- Voorbeeld 11 -->
+        <tr><td>65</td><td>01000001</td></tr> <!-- Voorbeeld 65, dit is ook de letter A -->
+      </table>
+    </div>
   </section>
 
   <footer> <!-- Footer onderaan de pagina -->
