@@ -160,17 +160,33 @@ nav li a:hover {
   text-align: center; /* Centreert de tekst */
 }
 
-.content h1,
-.content h2 {
-  margin-bottom: 12px; /* Ruimte onder de titels in de inhoud */
+.content h1 {
+  margin-bottom: 12px; /* Ruimte onder de hoofdtitel in de inhoud */
 }
 
 .content h2 {
-  margin-top: 40px; /* Ruimte boven elk kopje zodat onderdelen los van elkaar staan */
+  font-size: 1.75rem; /* Iets grotere kopjes */
+  margin-top: 56px; /* Veel ruimte boven elk kopje zodat onderdelen los van elkaar staan */
+  margin-bottom: 16px; /* Ruimte onder het kopje */
+}
+
+.content h2:first-child {
+  margin-top: 0; /* Het eerste kopje hoeft niet extra naar beneden */
+}
+
+.content h2::after {
+  content: ""; /* Maakt een leeg element na het kopje */
+  display: block; /* Zet het onder de tekst */
+  width: 48px; /* Breedte van het streepje */
+  height: 4px; /* Dikte van het streepje */
+  background-color: var(--primary); /* Blauw streepje onder elk kopje */
+  border-radius: 2px; /* Afgeronde uiteinden */
+  margin: 10px auto 0 auto; /* Centreert het streepje */
 }
 
 .content p {
-  margin-bottom: 16px; /* Ruimte tussen alinea's */
+  max-width: 640px; /* Smallere tekstkolom, dat leest prettiger */
+  margin: 0 auto 16px auto; /* Centreert de tekst en geeft ruimte eronder */
 }
 
 .content img {
@@ -183,30 +199,48 @@ nav li a:hover {
 /* ---------- Kaartjes (binaire code-pagina) ---------- */
 
 .kaarten {
+  counter-reset: kaart; /* Begint met tellen bij 0, voor de nummers in de kaartjes */
   display: grid; /* Zet de kaartjes in een raster */
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Kaartjes naast elkaar, op een telefoon onder elkaar */
   gap: 24px; /* Ruimte tussen de kaartjes */
   max-width: 1000px; /* Maximale breedte van het raster */
   margin: 0 auto; /* Centreert het raster */
-  padding: 0 24px 40px 24px; /* Ruimte rondom het raster */
+  padding: 40px 24px 20px 24px; /* Ruimte rondom het raster */
+  scroll-margin-top: 40px; /* Als je naar hier scrolt, blijft het menu er niet overheen hangen */
 }
 
 .kaart {
   background-color: var(--bg); /* Witte achtergrond */
   border: 1px solid #e5e7eb; /* Dun randje */
-  border-radius: 12px; /* Ronde hoeken */
+  border-radius: 16px; /* Ronde hoeken */
   padding: 28px; /* Ruimte binnen het kaartje */
   text-align: left; /* Tekst links uitgelijnd in het kaartje */
   box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Zachte schaduw */
-  transition: transform 0.2s ease; /* Zachte beweging bij hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Zachte beweging bij hover */
 }
 
 .kaart:hover {
   transform: translateY(-4px); /* Kaartje gaat iets omhoog als je erover zweeft */
+  box-shadow: 0 12px 24px rgba(37,99,235,0.12); /* Schaduw wordt iets groter en blauwig */
+}
+
+.kaart::before {
+  counter-increment: kaart; /* Telt per kaartje één op */
+  content: counter(kaart); /* Laat het nummer zien: 1, 2, 3 */
+  display: flex; /* Om het cijfer in het midden te zetten */
+  align-items: center; /* Cijfer verticaal in het midden */
+  justify-content: center; /* Cijfer horizontaal in het midden */
+  width: 36px; /* Breedte van het rondje */
+  height: 36px; /* Hoogte van het rondje */
+  border-radius: 50%; /* Maakt het vierkantje rond */
+  background-color: var(--primary); /* Blauw rondje */
+  color: white; /* Wit cijfer */
+  font-weight: 600; /* Dikkere tekst */
+  margin-bottom: 16px; /* Ruimte onder het rondje */
 }
 
 .kaart h3 {
-  color: var(--primary); /* Blauwe titel */
+  font-size: 1.15rem; /* Grootte van de titel in het kaartje */
   margin-bottom: 8px; /* Ruimte onder de titel */
 }
 
@@ -218,24 +252,43 @@ nav li a:hover {
 
 .tabel-wrap {
   overflow-x: auto; /* Tabel kan zijwaarts scrollen op een kleine telefoon */
+  max-width: 700px; /* Maximale breedte van het kader */
+  margin: 16px auto 24px auto; /* Centreert het kader en geeft ruimte erboven en eronder */
+  border: 1px solid #e5e7eb; /* Randje om de hele tabel */
+  border-radius: 12px; /* Ronde hoeken om de hele tabel */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Zachte schaduw */
 }
 
 .tabel {
   border-collapse: collapse; /* Randen van de cellen vallen samen */
-  margin: 16px auto 24px auto; /* Centreert de tabel */
-  width: 100%; /* Tabel vult de beschikbare breedte */
-  max-width: 700px; /* Maar nooit breder dan dit */
+  width: 100%; /* Tabel vult het kader */
 }
 
 .tabel th,
 .tabel td {
-  border: 1px solid #e5e7eb; /* Randje om elke cel */
-  padding: 10px 12px; /* Ruimte in elke cel */
+  padding: 12px 14px; /* Ruimte in elke cel */
   text-align: center; /* Tekst in het midden van de cel */
+  border-bottom: 1px solid #e5e7eb; /* Lijntje onder elke rij */
+  border-right: 1px solid #e5e7eb; /* Lijntje rechts van elke cel */
+  letter-spacing: 0.05em; /* Iets meer ruimte tussen de cijfers, leest makkelijker */
+}
+
+.tabel th:last-child,
+.tabel td:last-child {
+  border-right: none; /* Geen lijntje aan de rechterkant van het kader */
+}
+
+.tabel tr:last-child td {
+  border-bottom: none; /* Geen lijntje onder de laatste rij */
 }
 
 .tabel th {
   background-color: var(--bg-alt); /* Lichtgrijze achtergrond voor de kopjes */
+  font-weight: 600; /* Dikkere tekst voor de kopjes */
+}
+
+.tabel tr:nth-child(even) td:not(.aan) {
+  background-color: var(--bg-alt); /* Elke tweede rij iets grijs, leest makkelijker */
 }
 
 .tabel .aan {
@@ -248,14 +301,19 @@ nav li a:hover {
 
 .game-wrap {
   overflow-x: auto; /* Op een kleine telefoon kun je de game zijwaarts scrollen */
-  margin: 16px auto 24px auto; /* Centreert de game en geeft ruimte erboven en eronder */
-  max-width: 700px; /* Maximale breedte, zelfde als de game zelf */
+  max-width: 732px; /* Breedte van de game plus de ruimte rondom */
+  margin: 16px auto 24px auto; /* Centreert het kader en geeft ruimte erboven en eronder */
+  padding: 16px; /* Ruimte tussen het kader en de game */
+  background-color: var(--bg-alt); /* Lichtgrijze achtergrond rond de game */
+  border: 1px solid #e5e7eb; /* Dun randje */
+  border-radius: 16px; /* Ronde hoeken */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Zachte schaduw */
 }
 
 .game-wrap iframe {
   display: block; /* Haalt het kleine randje onder het iframe weg */
   margin: 0 auto; /* Centreert de game */
-  border-radius: 12px; /* Ronde hoeken, past bij de kaartjes */
+  border-radius: 8px; /* Ronde hoeken, past bij het kader */
 }
 
 /* ---------- Footer ---------- */
@@ -281,6 +339,14 @@ footer {
 
   .content {
     padding: 40px 20px; /* Minder ruimte rond de inhoud op een telefoon */
+  }
+
+  .content h2 {
+    margin-top: 40px; /* Iets minder ruimte boven de kopjes op een telefoon */
+  }
+
+  .kaarten {
+    padding: 32px 20px 12px 20px; /* Minder ruimte rond de kaartjes op een telefoon */
   }
 
   nav li a,
