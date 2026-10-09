@@ -196,7 +196,7 @@ nav li a:hover {
   margin-top: 24px; /* Ruimte boven de afbeelding */
 }
 
-/* ---------- Kaartjes (binaire code-pagina) ---------- */
+/* ---------- Kaartjes (binaire code- en kleurmodellen-pagina) ---------- */
 
 .kaarten {
   counter-reset: kaart; /* Begint met tellen bij 0, voor de nummers in de kaartjes */
@@ -316,6 +316,25 @@ nav li a:hover {
   border-radius: 8px; /* Ronde hoeken, past bij het kader */
 }
 
+/* ---------- Video (kleurmodellen-pagina) ---------- */
+
+.video-wrap {
+  max-width: 700px; /* Maximale breedte van de video */
+  margin: 16px auto 24px auto; /* Centreert de video en geeft ruimte erboven en eronder */
+  aspect-ratio: 16 / 9; /* Houdt de video in de standaard breedbeeldverhouding, ook op een telefoon */
+  border-radius: 16px; /* Ronde hoeken, past bij de kaartjes */
+  overflow: hidden; /* Knipt de video af langs de ronde hoeken */
+  background-color: #000; /* Zwarte achtergrond terwijl de video nog laadt */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Zachte schaduw */
+}
+
+.video-wrap iframe {
+  display: block; /* Haalt het kleine randje onder het iframe weg */
+  width: 100%; /* Video vult de houder in de breedte */
+  height: 100%; /* Video vult de houder in de hoogte */
+  border: 0; /* Geen randje om de video */
+}
+
 /* ---------- Footer ---------- */
 
 footer {
@@ -352,5 +371,9 @@ footer {
   nav li a,
   .dropdown-btn {
     padding: 8px 14px; /* Smallere menu-knoppen zodat alles past */
+  }
+
+  .video-wrap {
+    border-radius: 12px; /* Iets kleinere ronde hoeken op een telefoon */
   }
 }
