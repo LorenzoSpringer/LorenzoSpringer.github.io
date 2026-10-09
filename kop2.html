@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Kop 2</title>
+  <title>Kleurmodellen</title> <!-- Titel die op het tabblad komt te staan -->
   <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Verbindt vast met Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> <!-- Laadt het lettertype Lexend -->
   <link rel="stylesheet" type="text/css" href="css/stijl.css"> <!-- Koppelt het stijlbestand met alle opmaak -->
@@ -15,8 +15,8 @@
       <li class="dropdown"> <!-- Dropdown-menu item -->
         <button class="dropdown-btn" onclick="toggleDropdown()">Informatica ▾</button> <!-- Knop die het menu opent/sluit -->
         <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
-          <a href="kop1.html">Binaire stelsel</a> <!-- Link naar Kop 1 -->
-          <a href="kop2.html">Kop 2</a> <!-- Link naar Kop 2 -->
+          <a href="kop1.html">Binaire stelsel</a> <!-- Link naar de pagina over binaire code -->
+          <a href="kop2.html">Kleurmodellen</a> <!-- Link naar de pagina over kleurmodellen -->
           <a href="kop3.html">Kop 3</a> <!-- Link naar Kop 3 -->
         </div>
       </li>
@@ -24,9 +24,55 @@
     </ul>
   </nav>
 
-  <section class="content"> <!-- Inhoud van deze pagina -->
-    <h1>Kop 2</h1>
-    <p>Hier komt de inhoud van Kop 2. Je kunt hier tekst, afbeeldingen of andere elementen toevoegen die specifiek bij dit onderwerp horen.</p>
+  <section class="hero"> <!-- Grote kopsectie bovenaan de pagina -->
+    <h1>Kleurmodellen</h1> <!-- Hoofdtitel van de pagina -->
+    <p>Hoe laat een computer een kleur zien? Met een kleurmodel: een afspraak waarmee je elke kleur kunt opschrijven als getallen.</p> <!-- Korte introductie -->
+    <a href="#uitleg" class="btn">Lees verder</a> <!-- Link die naar het onderdeel met id "uitleg" scrolt -->
+  </section>
+
+  <section class="kaarten" id="uitleg"> <!-- Rij met drie kaartjes, id zodat de knop hierheen kan scrollen -->
+    <div class="kaart"> <!-- Kaartje 1 -->
+      <h3>RGB</h3> <!-- Titel van het kaartje -->
+      <p>Rood, groen en blauw licht. Een scherm mengt die drie kleuren om alle andere kleuren te maken.</p> <!-- Uitleg over RGB -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 2 -->
+      <h3>HEX</h3> <!-- Titel van het kaartje -->
+      <p>Dezelfde RGB-kleur, maar opgeschreven met cijfers en letters, zoals #FF0000. Zo staan kleuren in HTML en CSS.</p> <!-- Uitleg over HEX -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 3 -->
+      <h3>CMYK</h3> <!-- Titel van het kaartje -->
+      <p>Cyaan, magenta, geel en zwarte inkt. Printers gebruiken dit model om kleuren op papier te maken.</p> <!-- Uitleg over CMYK -->
+    </div>
+  </section>
+
+  <section class="content"> <!-- Sectie met de uitleg over de kleurmodellen -->
+    <h2>RGB: kleuren van licht</h2> <!-- Kopje van het onderdeel -->
+    <p>Bij RGB krijgt elke kleur (rood, groen, blauw) een waarde van 0 tot en met 255. Hoe hoger het getal, hoe feller die kleur. Zijn alle drie 0, dan is het scherm zwart. Zijn alle drie 255, dan is het wit. Zo kun je 256 × 256 × 256 = 16.777.216 verschillende kleuren maken.</p> <!-- Uitleg over RGB en het aantal kleuren -->
+    <p>Een waarde van 0 tot 255 past precies in één byte, dus in 8 bits. Dat is hetzelfde als bij het binaire stelsel op de vorige pagina.</p> <!-- Koppeling met de pagina over binaire code -->
+
+    <h2>HEX: dezelfde kleur, andere schrijfwijze</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Een HEX-code begint met een # en heeft daarna zes tekens. De eerste twee gaan over rood, de volgende twee over groen en de laatste twee over blauw. Ze zijn hexadecimaal geschreven, dus van 00 tot en met FF. FF is hetzelfde als 255.</p> <!-- Uitleg over HEX -->
+
+    <div class="tabel-wrap"> <!-- Zorgt dat de tabel op een kleine telefoon kan scrollen -->
+      <table class="tabel"> <!-- Tabel met voorbeelden van kleuren -->
+        <tr><th>Kleur</th><th>RGB</th><th>HEX</th></tr> <!-- Kopjes van de kolommen -->
+        <tr><td style="background-color:#FF0000; color:white;">Rood</td><td>255, 0, 0</td><td>#FF0000</td></tr> <!-- Rood, het vakje krijgt zelf de kleur -->
+        <tr><td style="background-color:#00FF00;">Groen</td><td>0, 255, 0</td><td>#00FF00</td></tr> <!-- Groen -->
+        <tr><td style="background-color:#0000FF; color:white;">Blauw</td><td>0, 0, 255</td><td>#0000FF</td></tr> <!-- Blauw -->
+        <tr><td style="background-color:#FFFF00;">Geel</td><td>255, 255, 0</td><td>#FFFF00</td></tr> <!-- Geel is rood plus groen -->
+        <tr><td style="background-color:#FFFFFF;">Wit</td><td>255, 255, 255</td><td>#FFFFFF</td></tr> <!-- Wit is alles op volle sterkte -->
+        <tr><td style="background-color:#000000; color:white;">Zwart</td><td>0, 0, 0</td><td>#000000</td></tr> <!-- Zwart is alles uit -->
+      </table>
+    </div>
+
+    <h2>CMYK: kleuren van inkt</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Een printer mengt inkt: cyaan, magenta en geel, plus zwart (de K van Key). Elke inktkleur houdt licht tegen, daarom worden kleuren donkerder naarmate je meer inkt mengt. Bij RGB gebeurt het omgekeerde: meer licht maakt de kleur lichter.</p> <!-- Uitleg over CMYK -->
+
+    <h2>Zelf ontdekken</h2> <!-- Kopje boven de links -->
+    <p>Goede pagina's en een video om meer te weten te komen over kleuren en om met kleuren te spelen:</p> <!-- Korte uitleg bij de links -->
+    <p><a href="https://www.w3schools.com/colors/default.asp" target="_blank">W3Schools: alles over kleuren</a></p> <!-- Link naar de kleurenpagina van W3Schools, opent in een nieuw tabblad -->
+    <p><a href="https://www.w3schools.com/colors/tryit.asp?filename=trycolors_rgbvalues" target="_blank">W3Schools: speel met RGB-waardes</a></p> <!-- Link naar de RGB-oefenpagina, opent in een nieuw tabblad -->
+    <p><a href="https://youtu.be/15aqFQQVBWU?si=yrmjNNBVtvuTKQVS" target="_blank">Video over kleuren</a></p> <!-- Link naar de video op YouTube, opent in een nieuw tabblad -->
   </section>
 
   <footer> <!-- Footer onderaan de pagina -->
