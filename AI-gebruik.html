@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>AI-gebruik</title> <!-- Titel die op het tabblad komt te staan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Verbindt vast met Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> <!-- Laadt het lettertype Lexend -->
+  <link rel="stylesheet" type="text/css" href="css/stijl.css"> <!-- Koppelt het stijlbestand met alle opmaak -->
+</head>
+<body>
+
+  <nav> <!-- Navigatiemenu bovenaan, staat op elke pagina hetzelfde -->
+    <ul>
+      <li><a href="index.html">Home</a></li> <!-- Link naar homepage -->
+      <li class="dropdown"> <!-- Dropdown-menu item: Informatica -->
+        <button class="dropdown-btn" onclick="toggleDropdown('dropdownMenu')">Informatica ▾</button> <!-- Knop die het menu opent/sluit -->
+        <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="kop1.html">Binaire stelsel</a> <!-- Link naar de pagina over binaire code -->
+          <a href="kop2.html">Kleurenstelsel</a> <!-- Link naar de pagina over kleuren -->
+          <a href="kop3.html">Compressie</a> <!-- Link naar de pagina over compressie -->
+        </div>
+      </li>
+      <li class="dropdown"> <!-- Dropdown-menu item: AI -->
+        <button class="dropdown-btn" onclick="toggleDropdown('aiMenu')">AI ▾</button> <!-- Knop die het AI-menu opent/sluit -->
+        <div class="dropdown-content" id="aiMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="ai-gebruik.html">AI-gebruik</a> <!-- Link naar de pagina over AI-gebruik -->
+          <a href="mobiel.html">Mobiel</a> <!-- Link naar de pagina over mobiel -->
+          <a href="artikel.html">Artikel</a> <!-- Link naar de pagina met het artikel -->
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero"> <!-- Grote kopsectie bovenaan de pagina -->
+    <h1>AI-gebruik</h1> <!-- Hoofdtitel van de pagina -->
+    <p>Waar gebruik ik AI eigenlijk voor? Vooral voor alledaagse dingen. Voor andere dingen doe ik het liever zelf.</p> <!-- Korte introductie -->
+    <a href="#uitleg" class="btn">Lees verder</a> <!-- Link die naar het onderdeel met id "uitleg" scrolt -->
+  </section>
+
+  <section class="kaarten" id="uitleg"> <!-- Rij met drie kaartjes, id zodat de knop hierheen kan scrollen -->
+    <div class="kaart"> <!-- Kaartje 1 -->
+      <h3>Alledaags</h3> <!-- Titel van het kaartje -->
+      <p>Ik gebruik AI vooral voor gewone dingen, zoals hulp bij de gym en uitrekenen hoeveel calorieën ergens in zitten.</p> <!-- Uitleg over alledaags gebruik -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 2 -->
+      <h3>Schoolopdrachten</h3> <!-- Titel van het kaartje -->
+      <p>Soms gebruik ik het voor school, maar zelf doen vind ik vaak chiller. Dan leer ik er meer van.</p> <!-- Uitleg over schoolopdrachten -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 3 -->
+      <h3>Of toch Google?</h3> <!-- Titel van het kaartje -->
+      <p>Soms vervangt AI Google voor mij, maar Google is vaak toch beter. Daarover lees je hieronder meer.</p> <!-- Uitleg over AI versus Google -->
+    </div>
+  </section>
+
+  <section class="content"> <!-- Sectie met de uitleg over mijn AI-gebruik -->
+    <h2>Alledaagse dingen</h2> <!-- Kopje van het onderdeel -->
+    <p>Het meeste gebruik ik AI voor kleine, praktische dingen. Zo laat ik me helpen met de gym en reken ik uit hoeveel calorieën er ergens in zitten. Dat gaat sneller dan zelf alles opzoeken.</p> <!-- Uitleg over gym en calorieën -->
+
+    <h2>Schoolopdrachten</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Voor schoolopdrachten gebruik ik AI soms ook, maar niet vaak. Ik vind het zelf doen vaak toch chiller, want dan leer ik er gewoon meer van. Als AI het werk doet, onthoud ik er veel minder van.</p> <!-- Uitleg over school en zelf doen -->
+
+    <h2>AI of Google?</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Soms gebruik ik AI in plaats van Google. Toch is Google vaak beter, omdat je met de AI die ik gebruik nog geen websites kunt bezoeken en geen spelletjes kunt spelen.</p> <!-- Uitleg over AI versus Google -->
+
+    <div class="tabel-wrap"> <!-- Zorgt dat de tabel op een kleine telefoon kan scrollen -->
+      <table class="tabel"> <!-- Tabel waarin AI en Google vergeleken worden -->
+        <tr><th></th><th>AI</th><th>Google</th></tr> <!-- Kopjes van de kolommen -->
+        <tr><td>Gym en calorieën</td><td class="aan">Handig</td><td>Kan, maar kost meer tijd</td></tr> <!-- Verschil 1 -->
+        <tr><td>Websites bezoeken</td><td>Nee</td><td class="aan">Ja</td></tr> <!-- Verschil 2 -->
+        <tr><td>Spelletjes spelen</td><td>Nee</td><td class="aan">Ja</td></tr> <!-- Verschil 3 -->
+      </table>
+    </div>
+
+    <h2>Onthoud</h2> <!-- Kopje van de samenvatting -->
+    <p>Ik gebruik AI vooral voor alledaagse dingen, zoals de gym en calorieën. Voor school doe ik het liever zelf, omdat ik daar meer van leer. En voor websites en spelletjes is Google vaak gewoon beter.</p> <!-- Samenvatting -->
+  </section>
+
+  <footer> <!-- Footer onderaan de pagina -->
+    <p>&copy; 2026 Mijn Website</p>
+  </footer>
+
+  <script> <!-- Regelt het openen/sluiten van de dropdownmenu's -->
+    function toggleDropdown(id) {
+      const menu = document.getElementById(id); // Zoekt het menu dat bij de aangeklikte knop hoort
+      document.querySelectorAll(".dropdown-content").forEach(function(m) { // Loopt langs alle dropdownmenu's
+        if (m !== menu) {
+          m.classList.remove("show"); // Sluit alle andere menu's
+        }
+      });
+      menu.classList.toggle("show"); // Wisselt het aangeklikte menu aan/uit
+    }
+    window.addEventListener("click", function(event) {
+      if (!event.target.matches('.dropdown-btn')) { // Als er buiten een knop geklikt wordt
+        document.querySelectorAll(".dropdown-content.show").forEach(function(m) { // Zoekt alle menu's die open staan
+          m.classList.remove("show"); // Sluit alle open menu's
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
