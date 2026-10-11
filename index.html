@@ -41,6 +41,13 @@
     <img src="afbeeldingen/Mopshond.avif" alt="Mijn hond">
   </section>
 
+  <section class="content"> <!-- Sectie met een stukje over mezelf -->
+    <h2>Over mij</h2> <!-- Kopje van het onderdeel -->
+    <p>Ik ben Lorenzo Springer en ik hou heel erg van sporten. Ik heb op veel sporten gezeten, zoals judo, tennis, handbal en voetbal. In mijn vrije tijd speel ik ook veel basketbal, omdat veel van mijn vrienden daarop zitten.</p> <!-- Introductie en sporten -->
+    <p>Voetbal en handbal zijn altijd mijn favoriet gebleven. Ik heb op het hoogste niveau van Nederland gehandbald, maar door omstandigheden moest ik helaas stoppen. Daarna ben ik gaan voetballen, en dat vind ik persoonlijk de beste sport ooit.</p> <!-- Favoriete sporten en verhaal over handbal -->
+    <p>Op school kom ik van de HAVO. De stap naar de hogeschool vond ik nog iets te groot, en door mijn goede cijfers vorig jaar vond ik VWO een leuke uitdaging.</p> <!-- Schoolopleiding -->
+  </section>
+
   <footer> <!-- Footer onderaan de pagina -->
     <p>&copy; 2026 Mijn Website</p>
   </footer>
@@ -48,7 +55,7 @@
   <script> <!-- Regelt het openen/sluiten van de dropdownmenu's -->
     function toggleDropdown(id) {
       const menu = document.getElementById(id); // Zoekt het menu dat bij de aangeklikte knop hoort
-      document.querySelectorAll(".dropdown-content").forEach(function(m) {
+      document.querySelectorAll(".dropdown-content").forEach(function(m) { // Loopt langs alle dropdownmenu's
         if (m !== menu) {
           m.classList.remove("show"); // Sluit alle andere menu's
         }
@@ -57,7 +64,7 @@
     }
     window.addEventListener("click", function(event) {
       if (!event.target.matches('.dropdown-btn')) { // Als er buiten een knop geklikt wordt
-        document.querySelectorAll(".dropdown-content.show").forEach(function(m) {
+        document.querySelectorAll(".dropdown-content.show").forEach(function(m) { // Zoekt alle menu's die open staan
           m.classList.remove("show"); // Sluit alle open menu's
         });
       }
