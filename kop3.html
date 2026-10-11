@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Kop 3</title>
+  <title>Compressie</title> <!-- Titel die op het tabblad komt te staan -->
   <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Verbindt vast met Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> <!-- Laadt het lettertype Lexend -->
   <link rel="stylesheet" type="text/css" href="css/stijl.css"> <!-- Koppelt het stijlbestand met alle opmaak -->
@@ -17,16 +17,66 @@
         <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
           <a href="kop1.html">Binaire stelsel</a> <!-- Link naar Kop 1 -->
           <a href="kop2.html">Kleurenstelsel</a> <!-- Link naar Kop 2 -->
-          <a href="kop3.html">Kop 3</a> <!-- Link naar Kop 3 -->
+          <a href="kop3.html">Compressie</a> <!-- Link naar Kop 3 -->
         </div>
       </li>
       <li><a href="pagina3.html">Pagina 3</a></li> <!-- Link naar derde pagina -->
     </ul>
   </nav>
 
-  <section class="content"> <!-- Inhoud van deze pagina -->
-    <h1>Kop 3</h1>
-    <p>Hier komt de inhoud van Kop 3. Je kunt hier tekst, afbeeldingen of andere elementen toevoegen die specifiek bij dit onderwerp horen.</p>
+  <section class="hero"> <!-- Grote kopsectie bovenaan de pagina -->
+    <h1>Compressie</h1> <!-- Hoofdtitel van de pagina -->
+    <p>Hoe krijg je een bestand kleiner zonder dat je er veel van merkt? Door slim om te gaan met nullen en enen.</p> <!-- Korte introductie -->
+    <a href="#uitleg" class="btn">Lees verder</a> <!-- Link die naar het kopje met id "uitleg" scrolt -->
+  </section>
+
+  <section class="kaarten" id="uitleg"> <!-- Rij met drie kaartjes, id zodat de knop hierheen kan scrollen -->
+    <div class="kaart"> <!-- Kaartje 1 -->
+      <h3>Wat is compressie?</h3> <!-- Titel van het kaartje -->
+      <p>Dezelfde informatie opslaan met minder bits. Het bestand wordt kleiner, dus het past makkelijker op je telefoon of in een mail.</p> <!-- Uitleg over compressie -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 2 -->
+      <h3>Verliesvrij</h3> <!-- Titel van het kaartje -->
+      <p>Bij uitpakken krijg je exact het origineel terug. Er gaat niets verloren, zoals bij een ZIP-bestand of een PNG-afbeelding.</p> <!-- Uitleg over verliesvrij -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 3 -->
+      <h3>Met verlies</h3> <!-- Titel van het kaartje -->
+      <p>Details die je bijna niet opmerkt worden weggelaten. Dat levert veel kleinere bestanden op, zoals bij JPEG en MP3.</p> <!-- Uitleg over compressie met verlies -->
+    </div>
+  </section>
+
+  <section class="content"> <!-- Sectie met de uitleg over compressie -->
+    <h2>Waarom comprimeren we?</h2> <!-- Kopje van het onderdeel -->
+    <p>Kleinere bestanden nemen minder opslagruimte in en zijn sneller te versturen. Zonder compressie zou een filmpje streamen of een foto appen veel langer duren en veel meer data kosten.</p> <!-- Uitleg waarom -->
+
+    <h2>Hoe werkt het? Een voorbeeld</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Een simpele manier is om herhalingen samen te vatten. In plaats van elke letter apart op te schrijven, noteer je hoe vaak een letter achter elkaar voorkomt. Dit heet run-length encoding.</p> <!-- Uitleg van het principe -->
+
+    <div class="tabel-wrap"> <!-- Zorgt dat de tabel op een kleine telefoon kan scrollen -->
+      <table class="tabel"> <!-- Tabel met het voorbeeld -->
+        <tr><th>Origineel</th><th>Gecomprimeerd</th></tr> <!-- Kopjes van de kolommen -->
+        <tr><td>AAAAABBBCC</td><td class="aan">5A3B2C</td></tr> <!-- 10 tekens worden 6 tekens -->
+      </table>
+    </div>
+
+    <p>Het origineel heeft 10 tekens, de gecomprimeerde versie maar 6. Als je de code 5A3B2C terugleest, kun je het origineel precies weer opbouwen. Dat maakt dit een verliesvrije methode.</p> <!-- Uitleg bij het voorbeeld -->
+
+    <h2>Compressie en binaire code</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Het werkt ook met nullen en enen. Een rij als 0000000011110000 kun je beschrijven als: acht nullen, vier enen, vier nullen. Dat is korter dan alle bits apart op te slaan, zeker bij lange rijen die op elkaar lijken.</p> <!-- Koppeling met de binaire pagina -->
+
+    <h2>Verliesvrij of met verlies?</h2> <!-- Kopje van het volgende onderdeel -->
+    <div class="tabel-wrap"> <!-- Zorgt dat de tabel op een kleine telefoon kan scrollen -->
+      <table class="tabel"> <!-- Tabel waarin beide soorten vergeleken worden -->
+        <tr><th></th><th>Verliesvrij</th><th>Met verlies</th></tr> <!-- Kopjes van de kolommen -->
+        <tr><td>Origineel terug?</td><td>Ja, exact</td><td>Nee, bijna</td></tr> <!-- Verschil 1 -->
+        <tr><td>Bestandsgrootte</td><td>Kleiner</td><td>Veel kleiner</td></tr> <!-- Verschil 2 -->
+        <tr><td>Voorbeelden</td><td>ZIP, PNG, FLAC</td><td>JPEG, MP3, MP4</td></tr> <!-- Verschil 3 -->
+        <tr><td>Handig voor</td><td>Documenten, logo's</td><td>Foto's, muziek, video</td></tr> <!-- Verschil 4 -->
+      </table>
+    </div>
+
+    <h2>Onthoud</h2> <!-- Kopje van de samenvatting -->
+    <p>Compressie maakt bestanden kleiner door informatie slimmer op te schrijven. Verliesvrij houdt alles intact, met verlies kiest ervoor om kleine details op te offeren voor een veel kleiner bestand.</p> <!-- Samenvatting -->
   </section>
 
   <footer> <!-- Footer onderaan de pagina -->
