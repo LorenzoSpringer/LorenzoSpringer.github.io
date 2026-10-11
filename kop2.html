@@ -12,15 +12,22 @@
   <nav> <!-- Navigatiemenu bovenaan, staat op elke pagina hetzelfde -->
     <ul>
       <li><a href="index.html">Home</a></li> <!-- Link naar homepage -->
-      <li class="dropdown"> <!-- Dropdown-menu item -->
-        <button class="dropdown-btn" onclick="toggleDropdown()">Informatica ▾</button> <!-- Knop die het menu opent/sluit -->
+      <li class="dropdown"> <!-- Dropdown-menu item: Informatica -->
+        <button class="dropdown-btn" onclick="toggleDropdown('dropdownMenu')">Informatica ▾</button> <!-- Knop die het menu opent/sluit -->
         <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
           <a href="kop1.html">Binaire stelsel</a> <!-- Link naar de pagina over binaire code -->
           <a href="kop2.html">Kleurmodellen</a> <!-- Link naar de pagina over kleurmodellen -->
           <a href="kop3.html">Compressie</a> <!-- Link naar Kop 3 -->
         </div>
       </li>
-      <li><a href="pagina3.html">Pagina 3</a></li> <!-- Link naar derde pagina -->
+      <li class="dropdown"> <!-- Dropdown-menu item: AI -->
+        <button class="dropdown-btn" onclick="toggleDropdown('aiMenu')">AI ▾</button> <!-- Knop die het AI-menu opent/sluit -->
+        <div class="dropdown-content" id="aiMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="ai-gebruik.html">AI-gebruik</a> <!-- Link naar de pagina over AI-gebruik -->
+          <a href="mobiel.html">Mobiel</a> <!-- Link naar de pagina over mobiel -->
+          <a href="artikel.html">Artikel</a> <!-- Link naar de pagina met het artikel -->
+        </div>
+      </li>
     </ul>
   </nav>
 
@@ -79,16 +86,21 @@
     <p>&copy; 2026 Mijn Website</p>
   </footer>
 
-  <script> <!-- Regelt het openen/sluiten van het dropdownmenu -->
-    function toggleDropdown() {
-      document.getElementById("dropdownMenu").classList.toggle("show"); // Wisselt het menu aan/uit
+  <script> <!-- Regelt het openen/sluiten van de dropdownmenu's -->
+    function toggleDropdown(id) {
+      const menu = document.getElementById(id); // Zoekt het menu dat bij de aangeklikte knop hoort
+      document.querySelectorAll(".dropdown-content").forEach(function(m) { // Loopt langs alle dropdownmenu's
+        if (m !== menu) {
+          m.classList.remove("show"); // Sluit alle andere menu's
+        }
+      });
+      menu.classList.toggle("show"); // Wisselt het aangeklikte menu aan/uit
     }
     window.addEventListener("click", function(event) {
-      if (!event.target.matches('.dropdown-btn')) { // Als er buiten de knop geklikt wordt
-        const dropdown = document.getElementById("dropdownMenu");
-        if (dropdown.classList.contains('show')) {
-          dropdown.classList.remove('show'); // Sluit het menu
-        }
+      if (!event.target.matches('.dropdown-btn')) { // Als er buiten een knop geklikt wordt
+        document.querySelectorAll(".dropdown-content.show").forEach(function(m) { // Zoekt alle menu's die open staan
+          m.classList.remove("show"); // Sluit alle open menu's
+        });
       }
     });
   </script>
