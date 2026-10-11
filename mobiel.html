@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobiel</title> <!-- Titel die op het tabblad komt te staan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Verbindt vast met Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> <!-- Laadt het lettertype Lexend -->
+  <link rel="stylesheet" type="text/css" href="css/stijl.css"> <!-- Koppelt het stijlbestand met alle opmaak -->
+</head>
+<body>
+
+  <nav> <!-- Navigatiemenu bovenaan, staat op elke pagina hetzelfde -->
+    <ul>
+      <li><a href="index.html">Home</a></li> <!-- Link naar homepage -->
+      <li class="dropdown"> <!-- Dropdown-menu item: Informatica -->
+        <button class="dropdown-btn" onclick="toggleDropdown('dropdownMenu')">Informatica ▾</button> <!-- Knop die het menu opent/sluit -->
+        <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="kop1.html">Binaire stelsel</a> <!-- Link naar de pagina over binaire code -->
+          <a href="kop2.html">Kleurenstelsel</a> <!-- Link naar de pagina over kleuren -->
+          <a href="kop3.html">Compressie</a> <!-- Link naar de pagina over compressie -->
+        </div>
+      </li>
+      <li class="dropdown"> <!-- Dropdown-menu item: AI -->
+        <button class="dropdown-btn" onclick="toggleDropdown('aiMenu')">AI ▾</button> <!-- Knop die het AI-menu opent/sluit -->
+        <div class="dropdown-content" id="aiMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="ai-gebruik.html">AI-gebruik</a> <!-- Link naar de pagina over AI-gebruik -->
+          <a href="mobiel.html">Mobiel</a> <!-- Link naar de pagina over mobiel -->
+          <a href="artikel.html">Artikel</a> <!-- Link naar de pagina met het artikel -->
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero"> <!-- Grote kopsectie bovenaan de pagina -->
+    <h1>Mijn telefoon en AI</h1> <!-- Hoofdtitel van de pagina -->
+    <p>Ik heb een iPhone 14 Pro Max. Hoe slim is die eigenlijk, en hoe doet hij het naast telefoons die veel meer met AI doen?</p> <!-- Korte introductie -->
+    <a href="#uitleg" class="btn">Lees verder</a> <!-- Link die naar het onderdeel met id "uitleg" scrolt -->
+  </section>
+
+  <section class="kaarten" id="uitleg"> <!-- Rij met drie kaartjes, id zodat de knop hierheen kan scrollen -->
+    <div class="kaart"> <!-- Kaartje 1 -->
+      <h3>Mijn telefoon</h3> <!-- Titel van het kaartje -->
+      <p>De iPhone 14 Pro Max uit 2022, met de A16 Bionic-chip en een Neural Engine voor slimme functies.</p> <!-- Uitleg over de telefoon -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 2 -->
+      <h3>Wel AI</h3> <!-- Titel van het kaartje -->
+      <p>Slimme camera, Face ID, tekst uit foto's halen en Siri. Dit gebeurt grotendeels op de telefoon zelf.</p> <!-- Uitleg over wat wel kan -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 3 -->
+      <h3>Geen Apple Intelligence</h3> <!-- Titel van het kaartje -->
+      <p>De nieuwste AI-functies van Apple werken niet op mijn telefoon. Daarvoor heeft Apple een nieuwere chip en meer geheugen nodig.</p> <!-- Uitleg over wat niet kan -->
+    </div>
+  </section>
+
+  <section class="content"> <!-- Sectie met de uitleg over mijn telefoon en AI -->
+    <h2>Wat zit er in mijn telefoon?</h2> <!-- Kopje van het onderdeel -->
+    <p>In mijn iPhone 14 Pro Max zit de A16 Bionic-chip. Die heeft een Neural Engine, een deel van de chip dat speciaal gemaakt is om AI-berekeningen snel uit te voeren. De telefoon heeft 6 GB werkgeheugen (RAM).</p> <!-- Uitleg over chip en RAM -->
+
+    <h2>Hoe gebruikt mijn telefoon AI?</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Ook zonder de nieuwste AI zit er veel slimme techniek in. De camera verbetert foto's automatisch, Face ID herkent mijn gezicht, en ik kan tekst op een foto aanwijzen en kopiëren. Siri begrijpt mijn stem en kan simpele opdrachten uitvoeren. Dit werkt allemaal zonder dat ik er iets voor hoef te doen.</p> <!-- Uitleg over AI-functies op mijn telefoon -->
+    <p>AI-apps, zoals een chatbot, werken ook gewoon op mijn telefoon. Die rekenen niet op de telefoon zelf, maar op servers via internet. Daarom heb ik hiervoor geen nieuwe telefoon nodig.</p> <!-- Uitleg over AI-apps via internet -->
+
+    <h2>Wat kan mijn telefoon niet?</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Apple heeft in nieuwere iPhones een AI-pakket gebouwd dat Apple Intelligence heet. Hiermee kun je bijvoorbeeld teksten laten schrijven of samenvatten en foto's bewerken. Dat werkt pas vanaf de iPhone 15 Pro en nieuwer, dus niet op mijn iPhone 14 Pro Max.</p> <!-- Uitleg over Apple Intelligence -->
+
+    <h2>Telefoons die veel meer met AI doen</h2> <!-- Kopje van het volgende onderdeel -->
+    <p>Andere telefoons, zoals de Samsung Galaxy S-serie en de Google Pixel, hebben AI veel meer in de telefoon verwerkt. Daar kun je bijvoorbeeld gesprekken laten vertalen, op het scherm iets omcirkelen om het op te zoeken, teksten laten samenvatten en foto's bewerken met AI.</p> <!-- Uitleg over andere telefoons -->
+
+    <div class="tabel-wrap"> <!-- Zorgt dat de tabel op een kleine telefoon kan scrollen -->
+      <table class="tabel"> <!-- Tabel waarin de telefoons vergeleken worden -->
+        <tr><th></th><th>iPhone 14 Pro Max</th><th>Nieuwere iPhones</th><th>Samsung en Pixel</th></tr> <!-- Kopjes van de kolommen -->
+        <tr><td>Assistent</td><td>Siri (basis)</td><td>Siri met Apple Intelligence</td><td>Gemini en andere assistenten</td></tr> <!-- Verschil 1 -->
+        <tr><td>Teksten schrijven en samenvatten</td><td>Nee</td><td>Ja</td><td>Ja</td></tr> <!-- Verschil 2 -->
+        <tr><td>Foto's bewerken met AI</td><td>Nee</td><td>Ja</td><td>Ja</td></tr> <!-- Verschil 3 -->
+        <tr><td>Zoeken op wat je op je scherm ziet</td><td>Beperkt</td><td>Ja</td><td>Ja</td></tr> <!-- Verschil 4 -->
+      </table>
+    </div>
+
+    <h2>Mijn conclusie</h2> <!-- Kopje van de samenvatting -->
+    <p>Mijn iPhone 14 Pro Max is slim genoeg voor wat ik dagelijks doe, zoals foto's maken en AI-apps gebruiken. Telefoons met nieuwere chips en meer geheugen kunnen meer AI op de telefoon zelf doen, maar ik mis het nog niet.</p> <!-- Samenvatting -->
+  </section>
+
+  <footer> <!-- Footer onderaan de pagina -->
+    <p>&copy; 2026 Mijn Website</p>
+  </footer>
+
+  <script> <!-- Regelt het openen/sluiten van de dropdownmenu's -->
+    function toggleDropdown(id) {
+      const menu = document.getElementById(id); // Zoekt het menu dat bij de aangeklikte knop hoort
+      document.querySelectorAll(".dropdown-content").forEach(function(m) { // Loopt langs alle dropdownmenu's
+        if (m !== menu) {
+          m.classList.remove("show"); // Sluit alle andere menu's
+        }
+      });
+      menu.classList.toggle("show"); // Wisselt het aangeklikte menu aan/uit
+    }
+    window.addEventListener("click", function(event) {
+      if (!event.target.matches('.dropdown-btn')) { // Als er buiten een knop geklikt wordt
+        document.querySelectorAll(".dropdown-content.show").forEach(function(m) { // Zoekt alle menu's die open staan
+          m.classList.remove("show"); // Sluit alle open menu's
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
