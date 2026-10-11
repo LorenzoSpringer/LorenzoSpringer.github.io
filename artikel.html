@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Artikel over AI</title> <!-- Titel die op het tabblad komt te staan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Verbindt vast met Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet"> <!-- Laadt het lettertype Lexend -->
+  <link rel="stylesheet" type="text/css" href="css/stijl.css"> <!-- Koppelt het stijlbestand met alle opmaak -->
+</head>
+<body>
+
+  <nav> <!-- Navigatiemenu bovenaan, staat op elke pagina hetzelfde -->
+    <ul>
+      <li><a href="index.html">Home</a></li> <!-- Link naar homepage -->
+      <li class="dropdown"> <!-- Dropdown-menu item: Informatica -->
+        <button class="dropdown-btn" onclick="toggleDropdown('dropdownMenu')">Informatica ▾</button> <!-- Knop die het menu opent/sluit -->
+        <div class="dropdown-content" id="dropdownMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="kop1.html">Binaire stelsel</a> <!-- Link naar de pagina over binaire code -->
+          <a href="kop2.html">Kleurenstelsel</a> <!-- Link naar de pagina over kleuren -->
+          <a href="kop3.html">Compressie</a> <!-- Link naar de pagina over compressie -->
+        </div>
+      </li>
+      <li class="dropdown"> <!-- Dropdown-menu item: AI -->
+        <button class="dropdown-btn" onclick="toggleDropdown('aiMenu')">AI ▾</button> <!-- Knop die het AI-menu opent/sluit -->
+        <div class="dropdown-content" id="aiMenu"> <!-- Verborgen menu dat verschijnt bij klikken -->
+          <a href="ai-gebruik.html">AI-gebruik</a> <!-- Link naar de pagina over AI-gebruik -->
+          <a href="mobiel.html">Mobiel</a> <!-- Link naar de pagina over mobiel -->
+          <a href="artikel.html">Artikel</a> <!-- Link naar de pagina met het artikel -->
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero"> <!-- Grote kopsectie bovenaan de pagina -->
+    <h1>Een positief artikel over AI</h1> <!-- Hoofdtitel van de pagina -->
+    <p>Ik heb een artikel gelezen over hoe AI ons leven kan verbeteren. Hieronder staat een samenvatting en mijn eigen mening.</p> <!-- Korte introductie -->
+    <a href="#uitleg" class="btn">Lees verder</a> <!-- Link die naar het onderdeel met id "uitleg" scrolt -->
+  </section>
+
+  <section class="kaarten" id="uitleg"> <!-- Rij met drie kaartjes, id zodat de knop hierheen kan scrollen -->
+    <div class="kaart"> <!-- Kaartje 1 -->
+      <h3>Titel</h3> <!-- Titel van het kaartje -->
+      <p>AI als bondgenoot: zo verbetert technologie ons dagelijks leven</p> <!-- De titel van het artikel -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 2 -->
+      <h3>Schrijver</h3> <!-- Titel van het kaartje -->
+      <p>Tosca Walstock, voor VPRO Medialab</p> <!-- De schrijver en de website -->
+    </div>
+    <div class="kaart"> <!-- Kaartje 3 -->
+      <h3>Datum</h3> <!-- Titel van het kaartje -->
+      <p>22 mei 2025</p> <!-- Datum waarop het artikel verscheen -->
+    </div>
+  </section>
+
+  <section class="content"> <!-- Sectie met de link, de samenvatting en de mening -->
+    <h2>Het artikel</h2> <!-- Kopje van het onderdeel -->
+    <p>Wil je het hele artikel zelf lezen? Dat kan via de knop hieronder.</p> <!-- Uitleg bij de link -->
+    <a href="https://www.vpro.nl/vpro-medialab/artikelen/ai-als-bondgenoot-zo-verbetert-technologie-ons-dagelijks-leven" class="btn" target="_blank" rel="noopener">Lees het artikel</a> <!-- Link naar het artikel, opent in een nieuw tabblad -->
+
+    <h2>Samenvatting</h2> <!-- Kopje van de samenvatting -->
+    <p>Het artikel laat zien dat AI niet alleen een bedreiging is, maar ook veel kansen biedt. In de zorg kan AI medische beelden, zoals röntgenfoto's en scans, nauwkeuriger bekijken, waardoor ziektes eerder gevonden worden. Ook kan AI voorspellen welke virusmutaties eraan komen. In de wetenschap bestaat er al een AI-model dat zelfstandig onderzoek kan doen. Op het werk kan AI saaie taken overnemen, waardoor een kortere werkweek met hetzelfde loon mogelijk wordt. Daarnaast zijn er persoonlijke AI-coaches voor bijvoorbeeld sporten, leren en plannen. De schrijver vindt dat AI onze samenleving gezonder en slimmer kan maken, maar geeft ook toe dat kritiek op AI terecht kan zijn.</p> <!-- Korte samenvatting in eigen woorden -->
+
+    <h2>Mijn mening</h2> <!-- Kopje van de mening -->
+    <p>Ik ben het grotendeels eens met het artikel. Zelf gebruik ik AI voor de gym en om calorieën uit te rekenen, en dat is precies het stukje over een persoonlijke coach die altijd beschikbaar is. Dat werkt voor mij echt handig en snel.</p> <!-- Mening deel 1: eens met het artikel -->
+    <p>Bij school ben ik iets voorzichtiger. Het artikel noemt AI een studiepartner, maar ik vind zelf doen vaak chiller, omdat ik er dan meer van leer. Ik denk dat AI goed kan helpen als je het gebruikt om iets uitgelegd te krijgen, maar niet als het je werk overneemt.</p> <!-- Mening deel 2: voorzichtig bij school -->
+    <p>Wat ik goed vind aan het artikel is dat het niet doet alsof AI perfect is. De schrijver zegt zelf dat de kritiek niet onterecht is. Daardoor komt het eerlijker over. Of we echt vaker vier dagen gaan werken door AI, weet ik niet, maar de voorbeelden uit de zorg en de wetenschap vind ik wel overtuigend.</p> <!-- Mening deel 3: eerlijk artikel en twijfel -->
+  </section>
+
+  <footer> <!-- Footer onderaan de pagina -->
+    <p>&copy; 2026 Mijn Website</p>
+  </footer>
+
+  <script> <!-- Regelt het openen/sluiten van de dropdownmenu's -->
+    function toggleDropdown(id) {
+      const menu = document.getElementById(id); // Zoekt het menu dat bij de aangeklikte knop hoort
+      document.querySelectorAll(".dropdown-content").forEach(function(m) { // Loopt langs alle dropdownmenu's
+        if (m !== menu) {
+          m.classList.remove("show"); // Sluit alle andere menu's
+        }
+      });
+      menu.classList.toggle("show"); // Wisselt het aangeklikte menu aan/uit
+    }
+    window.addEventListener("click", function(event) {
+      if (!event.target.matches('.dropdown-btn')) { // Als er buiten een knop geklikt wordt
+        document.querySelectorAll(".dropdown-content.show").forEach(function(m) { // Zoekt alle menu's die open staan
+          m.classList.remove("show"); // Sluit alle open menu's
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
